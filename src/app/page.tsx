@@ -11,7 +11,9 @@ console.log('process.env.VERCEL_URL', process.env.VERCEL_URL);
 
 export async function generateMetadata(): Promise<Metadata> {
   const frameTags = await getFrameMetadata(
-    `${'https://ham-frames.pages.dev' || 'http://localhost:3000'}/api`
+    `${
+      'https://ham-frames.pages.dev/api' || 'http://localhost:3000'
+    }/api`
   );
   return {
     other: frameTags,
@@ -62,12 +64,9 @@ export default function Home() {
       <div className={styles.button1}>
         <a href="https://ham.fun/8">
           <p>Ham</p>
-          <p>{`${process.env.VERCEL_URL}`}</p>
         </a>
         <img
-          src={`${
-            'https://ham-frames.pages.dev' || 'http://localhost:3000'
-          }/green-ham-with-wings.gif`}
+          src="./green-ham-with-wings.gif"
           style={{
             borderWidth: 10,
           }}

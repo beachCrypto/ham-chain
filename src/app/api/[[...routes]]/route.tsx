@@ -36,7 +36,7 @@ app.frame('/', (c) => {
   const fruit = inputText || buttonValue;
   return c.res({
     image: `${
-      process.env.VERCEL_URL || 'http://localhost:3000'
+      'https://ham-frames.pages.dev/api' || 'http://localhost:3000'
     }/green-ham-with-wings.gif`,
     intents: [
       // <TextInput placeholder="Enter custom fruit..." />,
