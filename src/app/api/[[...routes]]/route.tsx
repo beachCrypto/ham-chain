@@ -47,7 +47,7 @@ app.frame('/', (c) => {
       <Button.Link href="https://paragraph.xyz/@deployer/the-mechanics-of-hamcaster">
         mechanics
       </Button.Link>,
-      <Button.Link href="https://warpcast.com/~/compose?embeds%5B%5D=https%3A%2F%2Fham-frames.pages.dev%2Fapi&text=hame+chain+is+coming+-+frame+by+%40beachcrypto">
+      <Button.Link href="https://warpcast.com/~/compose?embeds%5B%5D=https%3A%2F%2Fham-frames.pages.dev%2Fapi&text=ham+chain+is+coming+-+frame+by+%40beachcrypto">
         Share
       </Button.Link>,
     ],
