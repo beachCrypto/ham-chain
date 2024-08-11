@@ -58,6 +58,14 @@ export default function Home() {
         <a href="https://ham.fun/8">
           <p>Ham</p>
         </a>
+        <img
+          src={`${
+            process.env.VERCEL_URL || 'http://localhost:3000'
+          }/green-ham-with-wings.gif`}
+          style={{
+            borderWidth: 10,
+          }}
+        />
       </div>
 
       {/* <div className={styles.grid}>
