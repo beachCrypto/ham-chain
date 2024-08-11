@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 const img = `${
-  'https://ham-frames.pages.dev/api' || 'http://localhost:3000'
+  'https://ham-frames.pages.dev' || 'http://localhost:3000'
 }/green-ham-with-wings.gif`;
 
 export async function GET() {
@@ -22,8 +22,7 @@ export async function GET() {
       >
         <img
           src={`${
-            'https://ham-frames.pages.dev/api' ||
-            'http://localhost:3000'
+            'https://ham-frames.pages.dev' || 'http://localhost:3000'
           }/green-ham-with-wings.gif`}
           style={{
             borderWidth: 10,
