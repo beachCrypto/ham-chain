@@ -65,12 +65,12 @@ export default function Home() {
         <a href="https://ham.fun/8">
           <p>Ham</p>
         </a>
-        <img
+        {/* <img
           src="./green-ham-with-wings.gif"
           style={{
             borderWidth: 10,
           }}
-        />
+        /> */}
       </div>
 
       {/* <div className={styles.grid}>
