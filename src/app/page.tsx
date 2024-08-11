@@ -4,6 +4,11 @@ import Image from 'next/image';
 
 import styles from './page.module.css';
 
+const vercelUrl = process.env.VERCEL_URL;
+
+console.log('vercelUrl', vercelUrl);
+console.log('process.env.VERCEL_URL', process.env.VERCEL_URL);
+
 export async function generateMetadata(): Promise<Metadata> {
   const frameTags = await getFrameMetadata(
     `${process.env.VERCEL_URL || 'http://localhost:3000'}/api`
@@ -57,6 +62,7 @@ export default function Home() {
       <div className={styles.button1}>
         <a href="https://ham.fun/8">
           <p>Ham</p>
+          <p>{`${process.env.VERCEL_URL}`}</p>
         </a>
         <img
           src={`${
