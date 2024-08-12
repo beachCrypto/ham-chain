@@ -11,7 +11,9 @@ console.log('process.env.VERCEL_URL', process.env.VERCEL_URL);
 
 export async function generateMetadata(): Promise<Metadata> {
   const frameTags = await getFrameMetadata(
-    `${'https://ham-frames.pages.dev' || 'http://localhost:3000'}/api`
+    `${
+      'https://ham-frames.pages.dev/api' || 'http://localhost:3000'
+    }/api`
   );
   return {
     other: frameTags,
