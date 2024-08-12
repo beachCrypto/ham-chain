@@ -17,8 +17,10 @@ const app = new Frog({
       },
     },
   },
-  verify: true,
+  verify: 'silent',
   title: 'Ham Frames',
+  imageAspectRatio: '1:1',
+  imageOptions: { width: 600, height: 600 },
   assetsPath: '/',
   basePath: '/api',
   // Supply a Hub to enable frame verification.
@@ -32,27 +34,73 @@ export const runtime = 'edge';
 // const imageUrl = 'http://localhost:3000/api/image';
 
 app.frame('/', (c) => {
-  const { buttonValue, inputText, status } = c;
-  const fruit = inputText || buttonValue;
+  const { frameData } = c;
+  console.log('frameData', frameData);
   return c.res({
     image: `${
       'https://ham-frames.pages.dev' || 'http://localhost:3000'
     }/green-ham-with-wings.gif`,
     intents: [
       // <TextInput placeholder="Enter custom fruit..." />,
-      //<Button action={`/user/${fid}`}>ham rank</Button>,
+      <Button action={`/study`} value="apple">
+        study ham
+      </Button>,
+    ],
+  });
+});
+
+app.frame('/study', (c) => {
+  const { frameData } = c;
+  console.log('frameData', frameData);
+  return c.res({
+    image: `${
+      'https://ham-frames.pages.dev' || 'http://localhost:3000'
+    }/chillin-ham-pepe.png`,
+    intents: [
+      // <TextInput placeholder="Enter custom fruit..." />,
+      // <Button action={`/user`} value="apple">
+      //   ham rank
+      // </Button>,
       <Button.Link href="https://docs.ham.fun/docs/network-information">
         docs
       </Button.Link>,
       <Button.Link href="https://paragraph.xyz/@deployer/the-mechanics-of-hamcaster">
         mechanics
       </Button.Link>,
-      <Button.Link href="https://warpcast.com/~/compose?embeds%5B%5D=https%3A%2F%2Fham-frames.pages.dev%2Fapi&text=ham+chain+is+coming+-+frame+by+%40beachcrypto">
-        Share
+      <Button.Link href="https://warpcast.com/~/compose?embeds%5B%5D=https%3A%2F%2Fham-frames.pages.dev%2Fapi&text=hamcaster+is+coming+-+frame+by+%40beachcrypto">
+        share
       </Button.Link>,
     ],
   });
 });
+
+// app.frame('/user', (c) => {
+//   const { buttonValue, frameData } = c;
+//   const { fid } = frameData as { fid: number };
+//   console.log('fid', fid);
+//   // const { buttonValue, inputText, status } = c;
+//   // const fruit = inputText || buttonValue;
+//   return c.res({
+//     image: (
+//       <div style={{ color: 'black', display: 'flex', fontSize: 60 }}>
+//         <p>fid is - </p> {`${fid}`}
+//       </div>
+//     ),
+//     intents: [
+//       // <TextInput placeholder="Enter custom fruit..." />,
+//       // <Button action={`/user/${fid}`}>ham rank</Button>,
+//       <Button.Link href="https://docs.ham.fun/docs/network-information">
+//         docs
+//       </Button.Link>,
+//       <Button.Link href="https://paragraph.xyz/@deployer/the-mechanics-of-hamcaster">
+//         mechanics
+//       </Button.Link>,
+//       <Button.Link href="https://warpcast.com/~/compose?embeds%5B%5D=https%3A%2F%2Fham-frames.pages.dev%2Fapi&text=ham+chain+is+coming+-+frame+by+%40beachcrypto">
+//         Share
+//       </Button.Link>,
+//     ],
+//   });
+// });
 
 devtools(app, { serveStatic });
 
