@@ -24,9 +24,9 @@ export async function GET() {
           src={`${
             'https://ham-frames.pages.dev' || 'http://localhost:3000'
           }/green-ham-with-wings.gif`}
-          style={{
-            borderWidth: 10,
-          }}
+          // style={{
+          //   borderWidth: 0,
+          // }}
         />
       </div>
     ),
